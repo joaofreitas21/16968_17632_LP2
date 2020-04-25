@@ -19,7 +19,9 @@ namespace trabalhoLP2
 
             Cliente p = new Cliente();
             p.Idade = 12;
+            p.NIF = 123456689;
             Console.WriteLine("{0}", p.Idade);
+            Console.WriteLine("{0}", p.NIF);
             Cliente c = new Cliente();
             Hotel hotel = new Hotel("Mercury", "Travessia", 30);
             Console.WriteLine(hotel.MaxQuartos);
