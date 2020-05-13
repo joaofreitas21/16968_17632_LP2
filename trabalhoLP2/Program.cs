@@ -6,7 +6,7 @@
 
 using System;
 
-namespace BO
+namespace DAO
 {
     class Program
     {

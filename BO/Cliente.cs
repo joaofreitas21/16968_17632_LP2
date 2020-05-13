@@ -49,7 +49,12 @@ namespace BO
                 if (dataRegisto == null)
                     dataRegisto = value;
             }
-         }
+        }
+        public double TotalAPagar
+        {
+            get { return totalPagar; }
+            set { totalPagar = value; }
+        }
         
         #endregion
 

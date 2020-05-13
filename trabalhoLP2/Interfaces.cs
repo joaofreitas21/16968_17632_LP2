@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BO
+namespace DAO
 {
     interface IQ
     {

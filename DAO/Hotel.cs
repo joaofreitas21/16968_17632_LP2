@@ -1,21 +1,26 @@
 ﻿using System;
+using BO;
+using System.Collections.Generic;
 
-namespace BO
+namespace DAO
 {
-    enum Registo
+    interface IHotel
     {
-        Efetuado,
-        NaoEfetuado,
+        bool EfetuarCheckIn(Cliente c , DateTime check, int num);
+        Registo RemoverRegistoQuarto(int num);
+        Registo AddRegistoQuarto(Quarto q,int num);
+        double EfetuarPagamento(int num, double precoDia);
     }
-    class Hotel:IHotel
+
+    [Serializable]
+    public class Hotel : HotelBO , IHotel
     {
         static int MAX = 100;
 
         #region ESTADO
         Quarto[] quartos;
-        string nome;
-        string morada;
-        int maxQuartos;
+        Clientes clientes;
+        Empregados empregados;
 
         #endregion
 
@@ -28,52 +33,62 @@ namespace BO
         public Hotel()
         {
             quartos =new Quarto[MAX];
-            nome = "";
-            morada = "";
-            maxQuartos = 0;
+            clientes = new Clientes();
+            empregados = new Empregados();
         }
-        
+        public Hotel(int c)
+        {
+            quartos = new Quarto[c];
+            clientes = new Clientes();
+            empregados = new Empregados();
+            maxQuartos = c;
+        }
+
         public Hotel(string a, string b,int c)
         {
             quartos = new Quarto[c];
-            nome = a;
-            morada = b;
+            clientes = new Clientes();
+            empregados = new Empregados();
             maxQuartos = c;
         }
 
         #endregion
 
-        #region PROPRIEDADES
+        #region METODOS_HOTEL
         /// <summary>
-        /// Manipula o atributo nome do hotel
+        /// Guarda infos dos parametros em BO
         /// </summary>
-        public string Nome
+        /// <param name="hotel"></param>
+        public void GuardaInfoHotel(HotelBO hotel)
         {
-            get { return nome; }
-            set { nome = value; }
-        }
-        /// <summary>
-        /// Manipula o atributo morada do hotel
-        /// </summary>
-        public string Morada
-        {
-            get { return morada; }
-            set { morada = value; }
-        }
-        /// <summary>
-        /// Manipula o atributo maxQuartos do hotel
-        /// </summary>
-        public int MaxQuartos
-        {
-            get { return maxQuartos; }
-            set { if (value > 0) maxQuartos = value; }
+            base.MaxQuartos = hotel.MaxQuartos;
+            base.Morada = hotel.Morada;
+            base.Nome = hotel.Nome;
+            base.NumTelemovel = hotel.NumTelemovel;
         }
 
+        public HotelBO DevolveInfo()
+        {
+            HotelBO hotel = new HotelBO();
+            hotel.MaxQuartos = base.MaxQuartos;
+            hotel.Morada = base.Morada;
+            hotel.Nome = base.Nome;
+            hotel.NumTelemovel = base.NumTelemovel;
 
+            return hotel;
+
+        }
         #endregion
-        #region METODOS_CLASSE
+        #region METODOS_QUARTO
 
-
+        public Quarto FichaQuarto(int num)
+        {
+            if (quartos[num].Cli.NIF != 0)
+            {
+                return quartos[num].FichaQuarto();
+            }
+            else return new Quarto(); 
+        }
         /// <summary>
         /// Método que faz o registo de um quarto
         /// </summary>
@@ -82,13 +97,15 @@ namespace BO
         /// <param name="num">Numero quarto</param>
         /// <param name="add">Extras</param>
         /// <returns>Retorno do enumerador Registo</returns>
-        public Registo AddRegistoQuarto(Cliente c,string reserva,int num,Adicoes add)
+        public Registo AddRegistoQuarto(Quarto q, int num)
         {
             if (quartos[num].Reserva() == true)
             {
-                quartos[num].Reserva(c, reserva,add);
-                return Registo.Efetuado;
-                
+                if (quartos[num].Reserva(q) == true)
+                {
+                    return Registo.Efetuado;
+                }
+                else return Registo.NaoEfetuado;
             }
             else
             {
@@ -105,7 +122,7 @@ namespace BO
         {
             if (quartos[num].Reserva() == false)
             {
-                quartos[num] = new Quarto();
+                quartos[num].StatusReserva(Status.NaoReservado);
                 return Registo.Efetuado;
             }
             else return Registo.NaoEfetuado;
@@ -116,11 +133,11 @@ namespace BO
         /// <param name="check">tempo da estadia</param>
         /// <param name="num">Numero do quarto</param>
         /// <returns>Booleano</returns>
-        public bool EfetuarCheckIn(string check,int num)
+        public bool EfetuarCheckIn(Cliente c, DateTime check, int num)
         {
             if (quartos[num].Reserva() == false)
             {
-                if (quartos[num].CheckIn(check) == Check.Efetuado)
+                if (quartos[num].CheckIn(c,check) == Check.Efetuado)
                     return true;
                 else return false;
             }
@@ -135,6 +152,7 @@ namespace BO
         /// <returns>Custo estadia</returns>
         public double EfetuarPagamento(int num,double precoDia)
         {
+            Cliente c = quartos[num].Cli;
             double valor=quartos[num].Custo(DateTime.Today,precoDia);
             Console.WriteLine("Quarto Numero - {0} ", num);
             if (num <= maxQuartos * 0.25)
@@ -156,9 +174,107 @@ namespace BO
                 Console.WriteLine("Quarto Deluxe");
                 valor = valor + 125;
             }
+            c.TotalAPagar = valor;
+            AddCliente(c);
             return valor;
         }
+
+        public List<int> QuartosLivres()
+        {
+            int i = 0;
+            List<int> quartosLivres = new List<int>();
+            foreach(Quarto q in quartos)
+            {
+                if (q.Reserva() == true)
+                {
+                    quartosLivres.Add(i);
+                }
+                i++;
+            }
+            return quartosLivres;
+        }
         #endregion
+        #region METODOS_CLIENTE
+        /// <summary>
+        /// Guarda o cliente todo (objeto)
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public bool AddCliente(Cliente c)
+        {
+            return clientes.GuardaCliente(c);
+        }
+        /// <summary>
+        /// Procura cliente pelo seu numero
+        /// </summary>
+        /// <param name="numCliente"></param>
+        /// <returns></returns>
+        public Cliente ProcuraClient(int numCliente)
+        {
+            Cliente cli = clientes.ProcuraCliente(numCliente);
+            return cli;
+        }
+        /// <summary>
+        /// Remove cliente pelo numero
+        /// </summary>
+        /// <param name="numCliente"></param>
+        /// <returns></returns>
+        public bool RemoveCliente(int numCliente)
+        {
+            return clientes.RemoveCliente(numCliente);
+        }
+        /// <summary>
+        /// Lista toda a info do cliente atraves do seu numero
+        /// </summary>
+        /// <param name="numCliente"></param>
+        /// <returns></returns>
+        public List<Cliente> FichaCliente(int numCliente)
+        {
+            return clientes.ListaInfo(numCliente);
+        }
+        #endregion
+        #region METODO_EMPREGADOS
+        /// <summary>
+        /// Adiciona empregado todo (objeto)
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public bool AddEmpregado(Empregado e)
+        {
+            return empregados.GuardaEmpregado(e);
+        }
+        /// <summary>
+        /// Procura empregado pelo ID Empregado
+        /// </summary>
+        /// <param name="idEmpregado"></param>
+        /// <returns></returns>
+        public Empregado ProcuraOEmpregado(int idEmpregado)
+        {
+            Empregado emp = empregados.ProcuraEmpregado(idEmpregado);
+            return emp;
+        }
+        /// <summary>
+        /// Remove empregado pelo ID Empregado
+        /// </summary>
+        /// <param name="idEmpregado"></param>
+        /// <returns></returns>
+        public bool RemoveEmpregado(int idEmpregado)
+        {
+            return empregados.RemoveEmpregado(idEmpregado);
+        }
+        /// <summary>
+        /// Lista a info do empregado pelo ID 
+        /// </summary>
+        /// <param name="idEmpregado"></param>
+        /// <returns></returns>
+        public List<Empregado> FichaEmpregado (int idEmpregado)
+        {
+            return empregados.ListaInfo(idEmpregado);
+        }
+        #endregion
+        
+
+       
         #region DEST
         ~Hotel()
         {

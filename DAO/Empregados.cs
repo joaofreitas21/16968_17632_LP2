@@ -7,74 +7,66 @@ using BO;
 
 namespace DAO
 {
-    [Serializable]
-    public class Clientes 
+   [Serializable]
+    public class Empregados
     {
         #region ESTADO
-        Dictionary<int, List<Cliente>> clientes;
-        int totalClientes;
+        Dictionary<int, List<Empregado>> empregados = new Dictionary<int, List<Empregado>>();
+        int totEmpregados;
+
         #endregion
 
-        #region METODOS
-        #region CONSTRUTORES
-        /// <summary>
-        /// Construtor Clientes
-        /// </summary>
-        public Clientes()
-        {
-            clientes = new Dictionary<int, List<Cliente>>();
-            totalClientes = 0;
-        }
-        #endregion
+        #region METODOS_CLASSE
 
         #region PROPRIEDADES
         /// <summary>
-        /// Manipula o atributo total clientes
+        /// Manipula atributo totEmpregados
         /// </summary>
-        public int TotalClientes
+        public int TotEmpregados
         {
             set { }
-            get { return totalClientes; }
+            get { return totEmpregados; }
         }
 
         #endregion
-        #region METODOS_CLASSE
+
+        #region METODOS
         /// <summary>
         /// Devolve o codigo 
         /// </summary>
         /// <param name="c"></param>
         /// <returns></returns>
-        public int GetCode(Cliente c)
+        public int GetCode(Empregado e)
         {
-            return c.NumeroCliente;
+            return e.IDEmpregado;
         }
 
         /// <summary>
-        /// Metodo que guarda o cliente 
+        /// Metodo que guarda o empregado
         /// </summary>
         /// <param name="c"></param>
         /// <returns></returns>
-        public bool GuardaCliente(Cliente c)
-         {
+        public bool GuardaEmpregado(Empregado e)
+        {
 
-            int key = GetCode(c);
-            c.DataRegisto = DateTime.Now;
-            if (!clientes.ContainsKey(key))
+            int key = GetCode(e);
+            e.InicioTrabalho = DateTime.Now;
+            if (!empregados.ContainsKey(key))
             {
-                clientes.Add(key, new List<Cliente> { });
-                clientes[key].Add(c);
-                totalClientes++;
-                Save(@"E:\Temp\Lesi 1º Ano 2º Semestre\LP2\trabalhoLP2\trabalhoLP2\Clientes.bin");
+                empregados.Add(key, new List<Empregado> { });
+                empregados[key].Add(e);
+                totEmpregados++;
+                Save(@"E:\Temp\Lesi 1º Ano 2º Semestre\LP2\trabalhoLP2\trabalhoLP2\Empregados.bin");
                 return true;
 
             }
             else
             {
-                clientes[key].Add(c);
+                empregados[key].Add(e);
                 return true;
             }
-           
-            
+
+
         }
 
         /// <summary>
@@ -83,38 +75,43 @@ namespace DAO
         /// <param name="c"></param>
         /// <param name="time"></param>
         /// <returns></returns>
-        public Cliente ProcuraCliente(int numCliente)
+        public Empregado ProcuraEmpregado(int idEmpregado)
         {
-            int key = numCliente;
-            if (clientes.ContainsKey(key) == true)
-            {
-                return clientes[key][0];
+            int key = idEmpregado;
+            if (empregados.ContainsKey(key) == true)
+            { 
+                return empregados[key][0];
             }
             else return null;
 
         }
+
         /// <summary>
-        /// Metodo que remove o cliente da hashtable
+        /// Metodo que remove o empregado
         /// </summary>
         /// <param name="c"></param>
         /// <returns></returns>
-        public bool RemoveCliente(int numCliente)
+        public bool RemoveEmpregado(int idEmpregado)
         {
-            int key = numCliente;
-            clientes.Remove(key);
-            totalClientes--;
+            int key = idEmpregado;
+            empregados.Remove(key);
+            totEmpregados--;
             //Como apagar o ficheiro binario que foi formado -- FAZER
             Save(@"");
             return true;
         }
-
-        public List<Cliente> ListaInfo(int key)
+        /// <summary>
+        /// Lista info do empregado
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public List<Empregado> ListaInfo(int key)
         {
             int i = 0;
-            List<Cliente> ficha = new List<Cliente>();
-            foreach(Cliente cl in clientes[key])
+            List<Empregado> ficha = new List<Empregado>();
+            foreach (Empregado emp in empregados[key])
             {
-                ficha[i] = cl;
+                ficha[i] = emp;
                 i++;
             }
             return ficha;
@@ -130,7 +127,7 @@ namespace DAO
             {
                 Stream stream = File.Open(fileName, FileMode.Create);
                 BinaryFormatter bin = new BinaryFormatter();
-                bin.Serialize(stream, clientes);
+                bin.Serialize(stream, empregados);
                 stream.Close();
                 return true;
             }
@@ -140,19 +137,7 @@ namespace DAO
                 return false;
             }
         }
-
-        /*
-         LOAD MAYBE!
-         */
-
         #endregion
-        #region DEST
-        ~Clientes()
-        {
-
-        }
-        #endregion
-
         #endregion
     }
 }

@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Autenticacao.cs" />
     <Compile Include="Clientes.cs" />
-    <Compile Include="Empregado.cs" />
+    <Compile Include="Empregados.cs" />
     <Compile Include="Hoteis.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
