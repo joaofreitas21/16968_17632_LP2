@@ -2,7 +2,8 @@
 
 namespace BO
 {
-    class Cliente:Pessoa
+    [Serializable]
+    public class Cliente:Pessoa
     {
         #region ESTADO
         int numeroCliente;

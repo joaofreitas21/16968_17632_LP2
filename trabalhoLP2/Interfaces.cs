@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trabalhoLP2
+namespace BO
 {
     interface IQ
     {

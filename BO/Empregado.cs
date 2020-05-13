@@ -2,22 +2,16 @@
 
 namespace BO
 {
-    enum TipoTrabalho
-    {
-        Rececao,
-        Bar,
-        Limpeza,
-        Seguranca,
-        Staff,
-
-    }
-    class Empregado:Pessoa
+   [Serializable]
+    public class Empregado : Pessoa
     {
         #region ESTADO
         TipoTrabalho trabalho;
         DateTime inicioTrabalho;
         string morada;
         double vencimento;
+        int idEmpregado=0;
+        DateTime atualizacao;
 
         #endregion
 
@@ -55,6 +49,16 @@ namespace BO
                 }
             }
         }
+        public DateTime Atualizacao
+        {
+            get { return atualizacao; }
+            set
+            {
+                
+                if (atualizacao == null) atualizacao = value;
+                
+            }
+        }
         /// <summary>
         /// Manipula o atributo morada
         /// </summary>
@@ -70,6 +74,11 @@ namespace BO
         {
             get { return trabalho; }
             set { trabalho = value; }
+        }
+        public int IDEmpregado
+        {
+            get { return idEmpregado; }
+            set { if (idEmpregado == 0) idEmpregado = value; }
         }
         /// <summary>
         /// Definir ordenado conforme tipo de trabalho

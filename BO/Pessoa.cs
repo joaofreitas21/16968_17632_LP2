@@ -2,11 +2,12 @@
 
 namespace BO
 {
-    class Pessoa
+    public class Pessoa
     {
         #region ESTADO
-        protected int idade;
+        int idade;
         string nome;
+        int numTlmv;
         DateTime dataNasc;
         protected int nif;
         #endregion
@@ -48,7 +49,11 @@ namespace BO
             set { if (value > 0) idade = value; }
         }
 
-
+        public int NumTelemovel
+        {
+            get { return numTlmv; }
+            set { numTlmv = value; }
+        }
         /// <summary>
         /// Manipula o atributo "nome"
         /// string nome;
