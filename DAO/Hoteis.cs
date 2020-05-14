@@ -322,18 +322,24 @@ namespace DAO
         /// <summary>
         /// Lista Info do Empregado e no hotel(key)
         /// </summary>
-        /// <param name="numC"></param>
+        /// <param name="numE"></param>
         /// <param name="cod"></param>
         /// <returns></returns>
-        static public List<Cliente> InfoEmpregado(int numE, int cod)
+        static public List<Empregado> InfoEmpregado(int numE, int cod)
         {
             int key = Convert.ToInt32(ProcuraHotel(cod));
             if (key != 0)
             {
-                return hoteis[key].FichaCliente(numE);
+                return hoteis[key].FichaEmpregado(numE);
             }
             else return null;
         }
+        /// <summary>
+        /// Procura empregado validando login
+        /// </summary>
+        /// <param name="numE"></param>
+        /// <param name="cod"></param>
+        /// <returns></returns>
         static public Empregado GetEmpregado(int numE, int cod)
         {
             int key = Convert.ToInt32(ProcuraHotel(cod));

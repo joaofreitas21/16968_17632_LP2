@@ -10,5 +10,73 @@ namespace BL
 {
     public class ControlaEmpregados
     {
+        /// <summary>
+        /// Adiciona empregado validando o login
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="cod"></param>
+        /// <param name="user"></param>
+        /// <param name="pw"></param>
+        /// <returns></returns>
+        static public bool AddEmpregado(Empregado e, int cod, string user, string pw)
+        {
+            if (Autenticacao.Autentication(user, pw) == true)
+            {
+                return Hoteis.AddEmpregado(e, cod);
+            }
+            Console.WriteLine("Autenticacao falhada!");
+            return false;
+        }
+        /// <summary>
+        /// Remove empregado validando o login
+        /// </summary>
+        /// <param name="numE"></param>
+        /// <param name="cod"></param>
+        /// <param name="user"></param>
+        /// <param name="pw"></param>
+        /// <returns></returns>
+        static public bool RemoveEmpregado(int numE, int cod, string user, string pw)
+        {
+            if (Autenticacao.Autentication(user, pw) == true)
+            {
+                return Hoteis.RemoveEmpregado(numE, cod);
+            }
+            Console.WriteLine("Autenticacao falhada!");
+            return false;
+        }
+        /// <summary>
+        /// Devolve informaçao do Empregado validando o login
+        /// </summary>
+        /// <param name="numE"></param>
+        /// <param name="cod"></param>
+        /// <param name="user"></param>
+        /// <param name="pw"></param>
+        /// <returns></returns>
+        static public List<Empregado> RegistoEmpregado(int numE, int cod, string user, string pw)
+        {
+            if (Autenticacao.Autentication(user, pw) == true)
+            {
+                return Hoteis.InfoEmpregado(numE, cod);
+            }
+            Console.WriteLine("Autenticacao falhada!");
+            return null;
+        }
+        /// <summary>
+        /// Procura empregado validando login
+        /// </summary>
+        /// <param name="numC"></param>
+        /// <param name="cod"></param>
+        /// <param name="user"></param>
+        /// <param name="pw"></param>
+        /// <returns></returns>
+        static public Empregado GetEmpregado(int numE, int cod, string user, string pw)
+        {
+            if (Autenticacao.Autentication(user, pw) == true)
+            {
+                return Hoteis.GetEmpregado(numE, cod);
+            }
+            Console.WriteLine("Autenticacao falhada!");
+            return null;
+        }
     }
 }
