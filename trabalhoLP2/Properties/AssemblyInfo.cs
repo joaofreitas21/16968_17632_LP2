@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("trabalhoLP2")]
+[assembly: AssemblyTitle("TrabalhoLP2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("trabalhoLP2")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("TrabalhoLP2")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c6238f60-3762-487e-9e14-1634680642c7")]
+[assembly: Guid("7f97b019-7601-46f3-a34c-ca972e5b59af")]
 
 // Version information for an assembly consists of the following four values:
 //

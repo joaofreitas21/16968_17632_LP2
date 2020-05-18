@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6238F60-3762-487E-9E14-1634680642C7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>trabalhoLP2</RootNamespace>
-    <AssemblyName>trabalhoLP2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <ProjectGuid>{7F97B019-7601-46F3-A34C-CA972E5B59AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TrabalhoLP2</RootNamespace>
+    <AssemblyName>TrabalhoLP2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -34,40 +34,249 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Clientes.cs" />
-    <Compile Include="Empregado.cs" />
-    <Compile Include="Hotel.cs" />
-    <Compile Include="Interfaces.cs" />
-    <Compile Include="Pessoa.cs" />
+    <Compile Include="Clientes\Adicionarclt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Adicionarclt.Designer.cs">
+      <DependentUpon>Adicionarclt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Informacaoclt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Informacaoclt.Designer.cs">
+      <DependentUpon>Informacaoclt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Registoclt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Registoclt.Designer.cs">
+      <DependentUpon>Registoclt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\Removerclt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\Removerclt.Designer.cs">
+      <DependentUpon>Removerclt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empregados\Adicionaremp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empregados\Adicionaremp.Designer.cs">
+      <DependentUpon>Adicionaremp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empregados\Informaçãoemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empregados\Informaçãoemp.Designer.cs">
+      <DependentUpon>Informaçãoemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empregados\Registoemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empregados\Registoemp.Designer.cs">
+      <DependentUpon>Registoemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empregados\Removeremp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empregados\Removeremp.Designer.cs">
+      <DependentUpon>Removeremp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerir_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerir_Clientes.Designer.cs">
+      <DependentUpon>Gerir_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerir_Empregados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerir_Empregados.Designer.cs">
+      <DependentUpon>Gerir_Empregados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerir_Hotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerir_Hotel.Designer.cs">
+      <DependentUpon>Gerir_Hotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerir_Quartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerir_Quartos.Designer.cs">
+      <DependentUpon>Gerir_Quartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\AdicionarHtl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotel\AdicionarHtl.Designer.cs">
+      <DependentUpon>AdicionarHtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\Informaçãohtl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotel\Informaçãohtl.Designer.cs">
+      <DependentUpon>Informaçãohtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\Quartoshtl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotel\Quartoshtl.Designer.cs">
+      <DependentUpon>Quartoshtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel\Removehtl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotel\Removehtl.Designer.cs">
+      <DependentUpon>Removehtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quarto.cs" />
+    <Compile Include="Quartos\Adicionarqurt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quartos\Adicionarqurt.Designer.cs">
+      <DependentUpon>Adicionarqurt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quartos\Check_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quartos\Check_In.Designer.cs">
+      <DependentUpon>Check_In.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quartos\Informacaoqurt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quartos\Informacaoqurt.Designer.cs">
+      <DependentUpon>Informacaoqurt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quartos\Pagamentoqurt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quartos\Pagamentoqurt.Designer.cs">
+      <DependentUpon>Pagamentoqurt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quartos\Removerqurt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quartos\Removerqurt.Designer.cs">
+      <DependentUpon>Removerqurt.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Clientes\Adicionarclt.resx">
+      <DependentUpon>Adicionarclt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Informacaoclt.resx">
+      <DependentUpon>Informacaoclt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Registoclt.resx">
+      <DependentUpon>Registoclt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\Removerclt.resx">
+      <DependentUpon>Removerclt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empregados\Adicionaremp.resx">
+      <DependentUpon>Adicionaremp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empregados\Informaçãoemp.resx">
+      <DependentUpon>Informaçãoemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empregados\Registoemp.resx">
+      <DependentUpon>Registoemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empregados\Removeremp.resx">
+      <DependentUpon>Removeremp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerir_Clientes.resx">
+      <DependentUpon>Gerir_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerir_Empregados.resx">
+      <DependentUpon>Gerir_Empregados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerir_Hotel.resx">
+      <DependentUpon>Gerir_Hotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerir_Quartos.resx">
+      <DependentUpon>Gerir_Quartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotel\AdicionarHtl.resx">
+      <DependentUpon>AdicionarHtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotel\Informaçãohtl.resx">
+      <DependentUpon>Informaçãohtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotel\Quartoshtl.resx">
+      <DependentUpon>Quartoshtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hotel\Removehtl.resx">
+      <DependentUpon>Removehtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quartos\Adicionarqurt.resx">
+      <DependentUpon>Adicionarqurt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quartos\Check_In.resx">
+      <DependentUpon>Check_In.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quartos\Informacaoqurt.resx">
+      <DependentUpon>Informacaoqurt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quartos\Pagamentoqurt.resx">
+      <DependentUpon>Pagamentoqurt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quartos\Removerqurt.resx">
+      <DependentUpon>Removerqurt.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Diagram.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BL\BL.csproj">
-      <Project>{c5e2951a-8899-4873-bc11-30cf752a99ed}</Project>
-      <Name>BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BO\BO.csproj">
-      <Project>{72341b77-5a60-4735-a104-640243708b7a}</Project>
-      <Name>BO</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
