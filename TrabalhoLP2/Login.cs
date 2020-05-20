@@ -25,10 +25,26 @@ namespace TrabalhoLP2
         //defenir funçoes para o button
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            t1 = new Thread(abrir_menu);
-            t1.TrySetApartmentState(ApartmentState.STA);
-            t1.Start();
+          
+            string user, pw;
+
+            user = "master";
+            pw = "master";
+            if((userTxt.Text == user) && (pwTxt.Text == pw))
+            {
+                this.Close();
+                t1 = new Thread(abrir_menu);
+                t1.TrySetApartmentState(ApartmentState.STA);
+                t1.Start();
+
+            }
+            else
+            {
+                MessageBox.Show("Autenticacao falhada");
+                userTxt.Clear();
+                pwTxt.Clear();
+                userTxt.Focus();
+            }
         }
 
         //metodo para abrir o proximo form que desejamos
@@ -38,6 +54,16 @@ namespace TrabalhoLP2
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void user_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -40,17 +40,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 12.096F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 34);
+            this.label1.Location = new System.Drawing.Point(32, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 24);
+            this.label1.Size = new System.Drawing.Size(165, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gerir Empregados";
             // 
             // btnadicionaremp
             // 
-            this.btnadicionaremp.Location = new System.Drawing.Point(37, 122);
+            this.btnadicionaremp.Location = new System.Drawing.Point(28, 99);
+            this.btnadicionaremp.Margin = new System.Windows.Forms.Padding(2);
             this.btnadicionaremp.Name = "btnadicionaremp";
-            this.btnadicionaremp.Size = new System.Drawing.Size(85, 34);
+            this.btnadicionaremp.Size = new System.Drawing.Size(64, 28);
             this.btnadicionaremp.TabIndex = 1;
             this.btnadicionaremp.Text = "Adicionar";
             this.btnadicionaremp.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // btnremoveremp
             // 
-            this.btnremoveremp.Location = new System.Drawing.Point(141, 122);
+            this.btnremoveremp.Location = new System.Drawing.Point(106, 99);
+            this.btnremoveremp.Margin = new System.Windows.Forms.Padding(2);
             this.btnremoveremp.Name = "btnremoveremp";
-            this.btnremoveremp.Size = new System.Drawing.Size(85, 34);
+            this.btnremoveremp.Size = new System.Drawing.Size(64, 28);
             this.btnremoveremp.TabIndex = 2;
             this.btnremoveremp.Text = "Remover";
             this.btnremoveremp.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // btninformacaoemp
             // 
-            this.btninformacaoemp.Location = new System.Drawing.Point(244, 122);
+            this.btninformacaoemp.Location = new System.Drawing.Point(183, 99);
+            this.btninformacaoemp.Margin = new System.Windows.Forms.Padding(2);
             this.btninformacaoemp.Name = "btninformacaoemp";
-            this.btninformacaoemp.Size = new System.Drawing.Size(85, 34);
+            this.btninformacaoemp.Size = new System.Drawing.Size(69, 28);
             this.btninformacaoemp.TabIndex = 3;
             this.btninformacaoemp.Text = "Informação";
             this.btninformacaoemp.UseVisualStyleBackColor = true;
@@ -78,19 +82,21 @@
             // 
             // btnregistoemp
             // 
-            this.btnregistoemp.Location = new System.Drawing.Point(354, 122);
+            this.btnregistoemp.Location = new System.Drawing.Point(266, 99);
+            this.btnregistoemp.Margin = new System.Windows.Forms.Padding(2);
             this.btnregistoemp.Name = "btnregistoemp";
-            this.btnregistoemp.Size = new System.Drawing.Size(85, 34);
+            this.btnregistoemp.Size = new System.Drawing.Size(64, 28);
             this.btnregistoemp.TabIndex = 4;
-            this.btnregistoemp.Text = "Registo";
+            this.btnregistoemp.Text = "Lista";
             this.btnregistoemp.UseVisualStyleBackColor = true;
             this.btnregistoemp.Click += new System.EventHandler(this.btnregistoemp_Click);
             // 
             // btnsair
             // 
-            this.btnsair.Location = new System.Drawing.Point(354, 34);
+            this.btnsair.Location = new System.Drawing.Point(266, 28);
+            this.btnsair.Margin = new System.Windows.Forms.Padding(2);
             this.btnsair.Name = "btnsair";
-            this.btnsair.Size = new System.Drawing.Size(85, 34);
+            this.btnsair.Size = new System.Drawing.Size(64, 28);
             this.btnsair.TabIndex = 5;
             this.btnsair.Text = "Sair";
             this.btnsair.UseVisualStyleBackColor = true;
@@ -98,17 +104,19 @@
             // 
             // Gerir_Empregados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 202);
+            this.ClientSize = new System.Drawing.Size(362, 164);
             this.Controls.Add(this.btnsair);
             this.Controls.Add(this.btnregistoemp);
             this.Controls.Add(this.btninformacaoemp);
             this.Controls.Add(this.btnremoveremp);
             this.Controls.Add(this.btnadicionaremp);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Gerir_Empregados";
             this.Text = "Gerir_Empregados";
+            this.Load += new System.EventHandler(this.Gerir_Empregados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

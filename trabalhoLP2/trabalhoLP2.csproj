@@ -46,52 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clientes\Adicionarclt.cs">
+    <Compile Include="Adicionarclt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\Adicionarclt.Designer.cs">
+    <Compile Include="Adicionarclt.Designer.cs">
       <DependentUpon>Adicionarclt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\Informacaoclt.cs">
+    <Compile Include="Informacaoclt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\Informacaoclt.Designer.cs">
+    <Compile Include="Informacaoclt.Designer.cs">
       <DependentUpon>Informacaoclt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\Registoclt.cs">
+    <Compile Include="ListaClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\Registoclt.Designer.cs">
-      <DependentUpon>Registoclt.cs</DependentUpon>
+    <Compile Include="ListaClient.Designer.cs">
+      <DependentUpon>ListaClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes\Removerclt.cs">
+    <Compile Include="ListaEmp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\Removerclt.Designer.cs">
+    <Compile Include="ListaEmp.Designer.cs">
+      <DependentUpon>ListaEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Removerclt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Removerclt.Designer.cs">
       <DependentUpon>Removerclt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empregados\Adicionaremp.cs">
+    <Compile Include="Adicionaremp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empregados\Adicionaremp.Designer.cs">
+    <Compile Include="Adicionaremp.Designer.cs">
       <DependentUpon>Adicionaremp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empregados\Informaçãoemp.cs">
+    <Compile Include="Informaçãoemp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empregados\Informaçãoemp.Designer.cs">
+    <Compile Include="Informaçãoemp.Designer.cs">
       <DependentUpon>Informaçãoemp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Empregados\Registoemp.cs">
+    <Compile Include="Removeremp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empregados\Registoemp.Designer.cs">
-      <DependentUpon>Registoemp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empregados\Removeremp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empregados\Removeremp.Designer.cs">
+    <Compile Include="Removeremp.Designer.cs">
       <DependentUpon>Removeremp.cs</DependentUpon>
     </Compile>
     <Compile Include="Gerir_Clientes.cs">
@@ -118,28 +118,28 @@
     <Compile Include="Gerir_Quartos.Designer.cs">
       <DependentUpon>Gerir_Quartos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel\AdicionarHtl.cs">
+    <Compile Include="AdicionarHtl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel\AdicionarHtl.Designer.cs">
+    <Compile Include="AdicionarHtl.Designer.cs">
       <DependentUpon>AdicionarHtl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel\Informaçãohtl.cs">
+    <Compile Include="Informaçãohtl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel\Informaçãohtl.Designer.cs">
+    <Compile Include="Informaçãohtl.Designer.cs">
       <DependentUpon>Informaçãohtl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel\Quartoshtl.cs">
+    <Compile Include="Quartoshtl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel\Quartoshtl.Designer.cs">
+    <Compile Include="Quartoshtl.Designer.cs">
       <DependentUpon>Quartoshtl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hotel\Removehtl.cs">
+    <Compile Include="Removehtl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hotel\Removehtl.Designer.cs">
+    <Compile Include="Removehtl.Designer.cs">
       <DependentUpon>Removehtl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -156,58 +156,58 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quartos\Adicionarqurt.cs">
+    <Compile Include="Adicionarqurt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quartos\Adicionarqurt.Designer.cs">
+    <Compile Include="Adicionarqurt.Designer.cs">
       <DependentUpon>Adicionarqurt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quartos\Check_In.cs">
+    <Compile Include="Check_In.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quartos\Check_In.Designer.cs">
+    <Compile Include="Check_In.Designer.cs">
       <DependentUpon>Check_In.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quartos\Informacaoqurt.cs">
+    <Compile Include="Informacaoqurt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quartos\Informacaoqurt.Designer.cs">
+    <Compile Include="Informacaoqurt.Designer.cs">
       <DependentUpon>Informacaoqurt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quartos\Pagamentoqurt.cs">
+    <Compile Include="Pagamentoqurt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quartos\Pagamentoqurt.Designer.cs">
+    <Compile Include="Pagamentoqurt.Designer.cs">
       <DependentUpon>Pagamentoqurt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quartos\Removerqurt.cs">
+    <Compile Include="Removerqurt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quartos\Removerqurt.Designer.cs">
+    <Compile Include="Removerqurt.Designer.cs">
       <DependentUpon>Removerqurt.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Clientes\Adicionarclt.resx">
+    <EmbeddedResource Include="Adicionarclt.resx">
       <DependentUpon>Adicionarclt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\Informacaoclt.resx">
+    <EmbeddedResource Include="Informacaoclt.resx">
       <DependentUpon>Informacaoclt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\Registoclt.resx">
-      <DependentUpon>Registoclt.cs</DependentUpon>
+    <EmbeddedResource Include="ListaClient.resx">
+      <DependentUpon>ListaClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes\Removerclt.resx">
+    <EmbeddedResource Include="ListaEmp.resx">
+      <DependentUpon>ListaEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Removerclt.resx">
       <DependentUpon>Removerclt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empregados\Adicionaremp.resx">
+    <EmbeddedResource Include="Adicionaremp.resx">
       <DependentUpon>Adicionaremp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empregados\Informaçãoemp.resx">
+    <EmbeddedResource Include="Informaçãoemp.resx">
       <DependentUpon>Informaçãoemp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Empregados\Registoemp.resx">
-      <DependentUpon>Registoemp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empregados\Removeremp.resx">
+    <EmbeddedResource Include="Removeremp.resx">
       <DependentUpon>Removeremp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gerir_Clientes.resx">
@@ -222,16 +222,16 @@
     <EmbeddedResource Include="Gerir_Quartos.resx">
       <DependentUpon>Gerir_Quartos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel\AdicionarHtl.resx">
+    <EmbeddedResource Include="AdicionarHtl.resx">
       <DependentUpon>AdicionarHtl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel\Informaçãohtl.resx">
+    <EmbeddedResource Include="Informaçãohtl.resx">
       <DependentUpon>Informaçãohtl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel\Quartoshtl.resx">
+    <EmbeddedResource Include="Quartoshtl.resx">
       <DependentUpon>Quartoshtl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hotel\Removehtl.resx">
+    <EmbeddedResource Include="Removehtl.resx">
       <DependentUpon>Removehtl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -249,19 +249,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Quartos\Adicionarqurt.resx">
+    <EmbeddedResource Include="Adicionarqurt.resx">
       <DependentUpon>Adicionarqurt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quartos\Check_In.resx">
+    <EmbeddedResource Include="Check_In.resx">
       <DependentUpon>Check_In.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quartos\Informacaoqurt.resx">
+    <EmbeddedResource Include="Informacaoqurt.resx">
       <DependentUpon>Informacaoqurt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quartos\Pagamentoqurt.resx">
+    <EmbeddedResource Include="Pagamentoqurt.resx">
       <DependentUpon>Pagamentoqurt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quartos\Removerqurt.resx">
+    <EmbeddedResource Include="Removerqurt.resx">
       <DependentUpon>Removerqurt.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -277,6 +277,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{c5e2951a-8899-4873-bc11-30cf752a99ed}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BO\BO.csproj">
+      <Project>{72341b77-5a60-4735-a104-640243708b7a}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using TrabalhoLP2.Quartos;
+
 
 namespace TrabalhoLP2
 {
     public partial class Gerir_Quartos : Form
     {
-        Thread a4;//Voltar de gerir clientes para menu
-        Thread f1;//Gerir quartos para adicionar quarto
-        Thread f2;//Gerir quartos para remover quarto
-        Thread f3;//Gerir quartos para informação quartos
-        Thread f4;//Gerir quartos para chek-in 
-        Thread f5;//Gerir quartos para pagamento quartos
+        Thread a4;
+        Thread f1;
+        Thread f2;
+        Thread f3;
+        Thread f4;
+        Thread f5;
 
         public Gerir_Quartos()
         {
@@ -107,5 +107,9 @@ namespace TrabalhoLP2
             Application.Run(new Pagamentoqurt());
         }
 
+        private void Gerir_Quartos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

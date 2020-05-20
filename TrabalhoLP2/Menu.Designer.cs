@@ -41,17 +41,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 16.128F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(130, 42);
+            this.label1.Location = new System.Drawing.Point(98, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 33);
+            this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Menu";
             // 
             // btnHotel
             // 
-            this.btnHotel.Location = new System.Drawing.Point(136, 181);
+            this.btnHotel.Location = new System.Drawing.Point(102, 147);
+            this.btnHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHotel.Name = "btnHotel";
-            this.btnHotel.Size = new System.Drawing.Size(101, 32);
+            this.btnHotel.Size = new System.Drawing.Size(76, 26);
             this.btnHotel.TabIndex = 1;
             this.btnHotel.Text = "Hotel";
             this.btnHotel.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // btnCliente
             // 
-            this.btnCliente.Location = new System.Drawing.Point(136, 246);
+            this.btnCliente.Location = new System.Drawing.Point(102, 200);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(101, 32);
+            this.btnCliente.Size = new System.Drawing.Size(76, 26);
             this.btnCliente.TabIndex = 2;
             this.btnCliente.Text = "Clientes";
             this.btnCliente.UseVisualStyleBackColor = true;
@@ -69,9 +72,10 @@
             // 
             // btnempregados
             // 
-            this.btnempregados.Location = new System.Drawing.Point(136, 311);
+            this.btnempregados.Location = new System.Drawing.Point(102, 253);
+            this.btnempregados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnempregados.Name = "btnempregados";
-            this.btnempregados.Size = new System.Drawing.Size(101, 32);
+            this.btnempregados.Size = new System.Drawing.Size(76, 26);
             this.btnempregados.TabIndex = 3;
             this.btnempregados.Text = "Empregados";
             this.btnempregados.UseVisualStyleBackColor = true;
@@ -79,9 +83,10 @@
             // 
             // btnquartos
             // 
-            this.btnquartos.Location = new System.Drawing.Point(136, 376);
+            this.btnquartos.Location = new System.Drawing.Point(102, 306);
+            this.btnquartos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnquartos.Name = "btnquartos";
-            this.btnquartos.Size = new System.Drawing.Size(101, 32);
+            this.btnquartos.Size = new System.Drawing.Size(76, 26);
             this.btnquartos.TabIndex = 4;
             this.btnquartos.Text = "Quartos";
             this.btnquartos.UseVisualStyleBackColor = true;
@@ -89,9 +94,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(277, 447);
+            this.button5.Location = new System.Drawing.Point(208, 363);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(103, 33);
+            this.button5.Size = new System.Drawing.Size(77, 27);
             this.button5.TabIndex = 5;
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = true;
@@ -101,17 +107,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 12.096F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 146);
+            this.label2.Location = new System.Drawing.Point(26, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 24);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Gerir:";
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 494);
+            this.ClientSize = new System.Drawing.Size(294, 401);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnquartos);
@@ -119,8 +126,10 @@
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.btnHotel);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

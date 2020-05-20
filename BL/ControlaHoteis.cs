@@ -17,13 +17,13 @@ namespace BL
       /// <param name="user"></param>
       /// <param name="pw"></param>
       /// <returns></returns>
-        static public bool AddHotel(HotelBO hotel, string user, string pw)
+        static public bool AddHotel(HotelBO hotel)
         {
-            if (hotel.MaxQuartos != 0 && hotel.MaxQuartos <= 100 && (Autenticacao.Autentication(user, pw) == true))
+            if (hotel.MaxQuartos != 0 && hotel.MaxQuartos <= 100 )
             {
                 return Hoteis.AddHotel(hotel);
             }
-            Console.WriteLine("Capacidade invalida ou Autenticacao falhada!");
+            
             return false;
         }
         /// <summary>
@@ -33,14 +33,12 @@ namespace BL
         /// <param name="user"></param>
         /// <param name="pw"></param>
         /// <returns></returns>
-        static public bool RemoveHotel(int cod, string user, string pw)
+        static public bool RemoveHotel(int cod)
         {
-            if (Autenticacao.Autentication(user, pw) == true)
-            {
+            
+            
                 return Hoteis.RemoveHotel(cod);
-            }
-            Console.WriteLine("Autenticacao falhada!");
-            return false;
+           
         }
         /// <summary>
         /// Devolve numero de quartos livres no Hotel q escolhe
@@ -49,14 +47,11 @@ namespace BL
         /// <param name="user"></param>
         /// <param name="pw"></param>
         /// <returns></returns>
-        static public List<int> NumQuartosLivres(int cod, string user, string pw)
+        static public List<int> NumQuartosLivres(int cod)
         {
-            if (Autenticacao.Autentication(user, pw) == true)
-            {
+            
                 return Hoteis.NumQuartosLivres(cod);
-            }
-            Console.WriteLine("Autenticacao falhada!");
-            return null;
+            
         }
        /// <summary>
        /// Devolve informaçao do codigo validando login
@@ -65,14 +60,12 @@ namespace BL
        /// <param name="user"></param>
        /// <param name="pw"></param>
        /// <returns></returns>
-        static public HotelBO InfoHotel(int cod,string user,string pw)
+        static public HotelBO InfoHotel(int cod)
         {
-            if (Autenticacao.Autentication(user, pw) == true)
-            {
+            
+            
                 return Hoteis.InfoHotel(cod);
-            }
-            Console.WriteLine("Autenticacao falhada!");
-            return null;
+           
         }
         /// <summary>
         /// Guarda hotel em ficheiro binario
@@ -83,7 +76,7 @@ namespace BL
         {
             return Hoteis.Save(nomFicheiro);
         }
-        /// <summary>
+        /// <summary>s
         /// Carrega ficheiro à priori gravado em binario
         /// </summary>
         /// <param name="nomFicheiro"></param>

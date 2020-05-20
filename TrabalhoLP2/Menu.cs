@@ -13,11 +13,11 @@ namespace TrabalhoLP2
 {
     public partial class Menu : Form
     {
-        Thread t2;//abrir gerir hotel
-        Thread t3;//abrir gerir clientes
-        Thread t4;//abrir gerir empregados
-        Thread t5;//abrir gerir quartos
-        Thread t6;//voltar de menu para login, fazer logout
+        Thread t2;
+        Thread t3;
+        Thread t4;
+        Thread t5;
+        Thread t6;
         public Menu()
         {
             InitializeComponent();
@@ -85,6 +85,11 @@ namespace TrabalhoLP2
         private void voltar_Login(object obj)
         {
             Application.Run(new Login());
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

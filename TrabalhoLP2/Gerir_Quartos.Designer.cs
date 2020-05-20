@@ -41,18 +41,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 12.096F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 31);
+            this.label1.Location = new System.Drawing.Point(26, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 24);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gerir Quartos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnadicionarqrt
             // 
-            this.btnadicionarqrt.Location = new System.Drawing.Point(24, 108);
+            this.btnadicionarqrt.Location = new System.Drawing.Point(18, 88);
+            this.btnadicionarqrt.Margin = new System.Windows.Forms.Padding(2);
             this.btnadicionarqrt.Name = "btnadicionarqrt";
-            this.btnadicionarqrt.Size = new System.Drawing.Size(85, 34);
+            this.btnadicionarqrt.Size = new System.Drawing.Size(64, 28);
             this.btnadicionarqrt.TabIndex = 1;
             this.btnadicionarqrt.Text = "Adicionar";
             this.btnadicionarqrt.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // btnremoverqrt
             // 
-            this.btnremoverqrt.Location = new System.Drawing.Point(139, 108);
+            this.btnremoverqrt.Location = new System.Drawing.Point(104, 88);
+            this.btnremoverqrt.Margin = new System.Windows.Forms.Padding(2);
             this.btnremoverqrt.Name = "btnremoverqrt";
-            this.btnremoverqrt.Size = new System.Drawing.Size(85, 34);
+            this.btnremoverqrt.Size = new System.Drawing.Size(64, 28);
             this.btnremoverqrt.TabIndex = 2;
             this.btnremoverqrt.Text = "Remover";
             this.btnremoverqrt.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // btninformacaoqrt
             // 
-            this.btninformacaoqrt.Location = new System.Drawing.Point(254, 108);
+            this.btninformacaoqrt.Location = new System.Drawing.Point(190, 88);
+            this.btninformacaoqrt.Margin = new System.Windows.Forms.Padding(2);
             this.btninformacaoqrt.Name = "btninformacaoqrt";
-            this.btninformacaoqrt.Size = new System.Drawing.Size(85, 34);
+            this.btninformacaoqrt.Size = new System.Drawing.Size(68, 28);
             this.btninformacaoqrt.TabIndex = 3;
             this.btninformacaoqrt.Text = "Informação";
             this.btninformacaoqrt.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btncheclimqrt
             // 
-            this.btncheclimqrt.Location = new System.Drawing.Point(369, 108);
+            this.btncheclimqrt.Location = new System.Drawing.Point(277, 88);
+            this.btncheclimqrt.Margin = new System.Windows.Forms.Padding(2);
             this.btncheclimqrt.Name = "btncheclimqrt";
-            this.btncheclimqrt.Size = new System.Drawing.Size(85, 34);
+            this.btncheclimqrt.Size = new System.Drawing.Size(64, 28);
             this.btncheclimqrt.TabIndex = 4;
             this.btncheclimqrt.Text = "Check-in";
             this.btncheclimqrt.UseVisualStyleBackColor = true;
@@ -90,9 +95,10 @@
             // 
             // btnsair
             // 
-            this.btnsair.Location = new System.Drawing.Point(495, 29);
+            this.btnsair.Location = new System.Drawing.Point(371, 24);
+            this.btnsair.Margin = new System.Windows.Forms.Padding(2);
             this.btnsair.Name = "btnsair";
-            this.btnsair.Size = new System.Drawing.Size(85, 32);
+            this.btnsair.Size = new System.Drawing.Size(64, 26);
             this.btnsair.TabIndex = 6;
             this.btnsair.Text = "Sair";
             this.btnsair.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // 
             // btnpagamentoqrt
             // 
-            this.btnpagamentoqrt.Location = new System.Drawing.Point(487, 108);
+            this.btnpagamentoqrt.Location = new System.Drawing.Point(365, 88);
+            this.btnpagamentoqrt.Margin = new System.Windows.Forms.Padding(2);
             this.btnpagamentoqrt.Name = "btnpagamentoqrt";
-            this.btnpagamentoqrt.Size = new System.Drawing.Size(93, 34);
+            this.btnpagamentoqrt.Size = new System.Drawing.Size(70, 28);
             this.btnpagamentoqrt.TabIndex = 7;
             this.btnpagamentoqrt.Text = "Pagamento";
             this.btnpagamentoqrt.UseVisualStyleBackColor = true;
@@ -110,9 +117,9 @@
             // 
             // Gerir_Quartos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 178);
+            this.ClientSize = new System.Drawing.Size(459, 145);
             this.Controls.Add(this.btnpagamentoqrt);
             this.Controls.Add(this.btnsair);
             this.Controls.Add(this.btncheclimqrt);
@@ -120,8 +127,10 @@
             this.Controls.Add(this.btnremoverqrt);
             this.Controls.Add(this.btnadicionarqrt);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Gerir_Quartos";
             this.Text = "Gerir_Quartos";
+            this.Load += new System.EventHandler(this.Gerir_Quartos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

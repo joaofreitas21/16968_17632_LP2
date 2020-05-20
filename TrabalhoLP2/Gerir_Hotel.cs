@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using TrabalhoLP2.Hotel;
+
 
 namespace TrabalhoLP2
 {
     public partial class Gerir_Hotel : Form
     {
-        Thread a3;//voltar de gerir hotel para menu
-        Thread b1;//Gerir hotel para adicionar hotel
-        Thread b2;//Gerir Hotel para remover hotel
-        Thread b3;//Gerir Hotel para informação hotel
-        Thread b4;//Gerir hotel para quartos livres
+        Thread a3;
+        Thread b1;
+        Thread b2;
+        Thread b3;
+        Thread b4;
         public Gerir_Hotel()
         {
             InitializeComponent();
@@ -87,6 +87,11 @@ namespace TrabalhoLP2
         private void quartos_Hotel(object obj)
         {
             Application.Run(new Quartoshtl());
+        }
+
+        private void Gerir_Hotel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

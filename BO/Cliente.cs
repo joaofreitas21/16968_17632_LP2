@@ -21,8 +21,8 @@ namespace BO
             numeroCliente = 0;
             totalPagar = 0;
         }
-    
-        public Cliente(int idade,string nome,int nif,int num) : base(idade,nome,nif)
+
+        public Cliente(string nome, int idade,int nif,int numTel,int num) : base(idade,nome,nif)
         {
             numeroCliente = num;
         }

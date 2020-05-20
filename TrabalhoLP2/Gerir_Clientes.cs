@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using TrabalhoLP2.Clientes;
+
 
 namespace TrabalhoLP2
 {
  
     public partial class Gerir_Clientes : Form
     {
-        Thread a1;//voltar de gerir clientes para menu
-        Thread c1;//Gerir clientes para adicionar cliente
-        Thread c2;//Gerir clientes para remover cliente
-        Thread c3;//Gerir clientes para informação cliente
-        Thread c4;//Gerir clientes para Registo cliente
+        Thread a1;
+        Thread c1;
+        Thread c2;
+        Thread c3;
+        Thread c4;
 
         public Gerir_Clientes()
         {
@@ -87,7 +87,7 @@ namespace TrabalhoLP2
         }
         private void registo_Cliente(object obj)
         {
-            Application.Run(new Registoclt());
+            Application.Run(new ListaClient());
         }
     }
 }

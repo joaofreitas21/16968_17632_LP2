@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using TrabalhoLP2.Empregados;
+
 
 namespace TrabalhoLP2
 {
     public partial class Gerir_Empregados : Form
     {
-        Thread a2;//Voltar de gerir empregados para menu
-        Thread d1;//Gerir empregado para adicionar empregados
-        Thread d2;//Gerir empregado para remover empregado
-        Thread d3;//Gerir empregado para informação empregado
-        Thread d4;//Gerir empregado para registo cliente
+        Thread a2;
+        Thread d1;
+        Thread d2;
+        Thread d3;
+        Thread d4;
 
         public Gerir_Empregados()
         {
@@ -87,7 +87,12 @@ namespace TrabalhoLP2
         }
         private void registo_Empregados(object obj)
         {
-            Application.Run(new Registoemp());
+            Application.Run(new ListaEmp());
+        }
+
+        private void Gerir_Empregados_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
