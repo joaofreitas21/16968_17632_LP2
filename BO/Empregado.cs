@@ -26,10 +26,10 @@ namespace BO
             inicioTrabalho = DateTime.Parse("01/01/2020");
             vencimento = 0;
             morada = "";
-            trabalho = TipoTrabalho.Rececao;
+            trabalho = TipoTrabalho.Limpeza;
         }
        
-        public Empregado(int i,string n,int nif,float venc) : base(i, n, nif)
+        public Empregado(string n,int i,int nif,float venc,int numTel,int idEmpregado) : base(i, n, nif)
         {
             vencimento = venc;
         }

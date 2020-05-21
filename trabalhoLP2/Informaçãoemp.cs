@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
@@ -14,6 +15,7 @@ namespace TrabalhoLP2
 {
     public partial class Informaçãoemp : Form
     {
+        Thread m1;
         public Informaçãoemp()
         {
             InitializeComponent();
@@ -40,11 +42,19 @@ namespace TrabalhoLP2
             {
                 MessageBox.Show("Campos por preencher!!!");
             }
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
         }
 
         private void Informaçãoemp_Load(object sender, EventArgs e)
         {
 
+        }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
         }
     }
 }

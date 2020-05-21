@@ -32,10 +32,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.numQ = new System.Windows.Forms.TextBox();
+            this.codC = new System.Windows.Forms.TextBox();
+            this.codH = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataCheck = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -80,49 +82,70 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Codigo Hotel";
             // 
-            // textBox1
+            // numQ
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 84);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 4;
+            this.numQ.Location = new System.Drawing.Point(75, 84);
+            this.numQ.Margin = new System.Windows.Forms.Padding(2);
+            this.numQ.Name = "numQ";
+            this.numQ.Size = new System.Drawing.Size(148, 20);
+            this.numQ.TabIndex = 4;
             // 
-            // textBox2
+            // codC
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 124);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 5;
+            this.codC.Location = new System.Drawing.Point(76, 124);
+            this.codC.Margin = new System.Windows.Forms.Padding(2);
+            this.codC.Name = "codC";
+            this.codC.Size = new System.Drawing.Size(146, 20);
+            this.codC.TabIndex = 5;
             // 
-            // textBox3
+            // codH
             // 
-            this.textBox3.Location = new System.Drawing.Point(94, 158);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
-            this.textBox3.TabIndex = 6;
+            this.codH.Location = new System.Drawing.Point(94, 158);
+            this.codH.Margin = new System.Windows.Forms.Padding(2);
+            this.codH.Name = "codH";
+            this.codH.Size = new System.Drawing.Size(128, 20);
+            this.codH.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(83, 211);
+            this.button1.Location = new System.Drawing.Point(76, 234);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 19);
             this.button1.TabIndex = 7;
             this.button1.Text = "Submeter";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataCheck
+            // 
+            this.dataCheck.Location = new System.Drawing.Point(94, 188);
+            this.dataCheck.Name = "dataCheck";
+            this.dataCheck.Size = new System.Drawing.Size(175, 20);
+            this.dataCheck.TabIndex = 8;
+            this.dataCheck.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dataCheck.ValueChanged += new System.EventHandler(this.dataCheck_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 194);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Data Check-In";
             // 
             // Check_In
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 310);
+            this.ClientSize = new System.Drawing.Size(343, 387);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dataCheck);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.codH);
+            this.Controls.Add(this.codC);
+            this.Controls.Add(this.numQ);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -142,9 +165,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox numQ;
+        private System.Windows.Forms.TextBox codC;
+        private System.Windows.Forms.TextBox codH;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dataCheck;
+        private System.Windows.Forms.Label label5;
     }
 }

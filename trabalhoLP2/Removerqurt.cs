@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BL;
+﻿using BL;
 using BO;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace TrabalhoLP2
 {
     public partial class Removerqurt : Form
     {
+        Thread m1;
         public Removerqurt()
         {
             InitializeComponent();
@@ -43,8 +38,16 @@ namespace TrabalhoLP2
             {
                 MessageBox.Show("Campos por preencher!!!");
             }
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
 
-            
+
+        }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
         }
     }
 }

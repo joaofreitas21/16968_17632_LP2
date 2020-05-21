@@ -9,12 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BO;
-
+using System.Threading;
 
 namespace TrabalhoLP2
 {
     public partial class ListaEmp : Form
     {
+        Thread m1;
         public ListaEmp()
         {
             InitializeComponent();
@@ -28,6 +29,10 @@ namespace TrabalhoLP2
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
         }
 
         private void ListaEmp_Load(object sender, EventArgs e)
@@ -40,8 +45,12 @@ namespace TrabalhoLP2
         {
             
         }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
+        }
 
-    
+
 
         private void codE_TextChanged(object sender, EventArgs e)
         {

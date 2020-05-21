@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
@@ -14,6 +15,7 @@ namespace TrabalhoLP2
 {
     public partial class Adicionarclt : Form
     {
+        Thread m1;
         public Adicionarclt()
         {
             InitializeComponent();
@@ -45,15 +47,23 @@ namespace TrabalhoLP2
 
             if (x == false)
             {
-                MessageBox.Show("Cliente " + nome.Text + " adionado!");
+                MessageBox.Show("Cliente " + nome.Text + " adicionado!");
                 this.Hide();
             }
-            
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
+
         }
 
         private void Adicionarclt_Load(object sender, EventArgs e)
         {
 
+        }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
         }
     }
 }

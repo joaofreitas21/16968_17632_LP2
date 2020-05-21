@@ -5,14 +5,14 @@ namespace BO
    [Serializable]
     public class HotelBO
     {
-        static int MAX = 100;
+        
 
         #region ESTADO
         string nome;
         string morada;
         int numTlm;
         int cod;
-        protected int maxQuartos;
+        protected int maxQuartos=100;
 
         #endregion
 
@@ -29,11 +29,12 @@ namespace BO
             maxQuartos = 0;
         }
         
-        public HotelBO(string a, string b,int c)
+        public HotelBO(string a, string b,int c,int n)
         {
             nome = a;
             morada = b;
             maxQuartos = c;
+            cod = n;
         }
 
         #endregion

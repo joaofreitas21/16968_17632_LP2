@@ -39,7 +39,7 @@
             // btnEntrar
             // 
             this.btnEntrar.Location = new System.Drawing.Point(207, 260);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(70, 28);
             this.btnEntrar.TabIndex = 0;
@@ -70,7 +70,7 @@
             // userTxt
             // 
             this.userTxt.Location = new System.Drawing.Point(88, 113);
-            this.userTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userTxt.Margin = new System.Windows.Forms.Padding(2);
             this.userTxt.Name = "userTxt";
             this.userTxt.Size = new System.Drawing.Size(188, 20);
             this.userTxt.TabIndex = 3;
@@ -79,10 +79,11 @@
             // pwTxt
             // 
             this.pwTxt.Location = new System.Drawing.Point(88, 184);
-            this.pwTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pwTxt.Margin = new System.Windows.Forms.Padding(2);
             this.pwTxt.Name = "pwTxt";
             this.pwTxt.Size = new System.Drawing.Size(188, 20);
             this.pwTxt.TabIndex = 4;
+            this.pwTxt.UseSystemPasswordChar = true;
             this.pwTxt.TextChanged += new System.EventHandler(this.pw_TextChanged);
             // 
             // label3
@@ -107,7 +108,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEntrar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BL;
+using System;
+using System.Threading;
 using System.Windows.Forms;
-using BL;
-using BO;
 namespace TrabalhoLP2
 {
     public partial class Removeremp : Form
     {
+        Thread m1;
         public Removeremp()
         {
             InitializeComponent();
@@ -40,11 +34,19 @@ namespace TrabalhoLP2
             {
                 MessageBox.Show("Empregado não existe!");
             }
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
         }
 
         private void Removeremp_Load(object sender, EventArgs e)
         {
 
+        }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
         }
     }
 }

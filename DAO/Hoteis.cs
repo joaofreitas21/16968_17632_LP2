@@ -47,7 +47,7 @@ namespace DAO
             {
                 return hoteis[key].DevolveInfo();
             }
-            else return new HotelBO(null, null, 1);
+            else return new HotelBO(null, null, 1,-1);
         }
         /// <summary>
         /// Adiciona Hotel à lista
@@ -60,8 +60,8 @@ namespace DAO
             {
                 Hotel h = new Hotel(hotel.MaxQuartos);
                 h.GuardaInfoHotel(hotel);
-                hoteis[quantHoteis] = h;
-                quantHoteis++;
+                //hoteis[quantHoteis] = h;
+                //quantHoteis++;
                 return true;
             }
             else return false;
@@ -140,9 +140,10 @@ namespace DAO
         static public bool AddQuarto(Quarto q,int numQ,int cod)
         {
             int key = Convert.ToInt32(ProcuraHotel(cod));
-            if (key != -1 && hoteis[key].MaxQuartos >= numQ)
+            if (key != -1 ) // hoteis[key].MaxQuartos >= numQ)
             {
                 hoteis[key].AddRegistoQuarto(q, numQ);
+                AddCliente(q.Cli, cod);
                 return true;
             }
             else return false;

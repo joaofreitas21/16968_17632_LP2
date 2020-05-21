@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
@@ -13,6 +14,7 @@ namespace TrabalhoLP2
 {
     public partial class ListaClient : Form
     {
+        Thread m1;
         public ListaClient()
         {
             InitializeComponent();
@@ -21,6 +23,10 @@ namespace TrabalhoLP2
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            this.Close();
+            m1 = new Thread(volta_Menu);
+            m1.TrySetApartmentState(ApartmentState.STA);
+            m1.Start();
 
         }
 
@@ -42,7 +48,7 @@ namespace TrabalhoLP2
                 ControlaClientes.RegistoCliente(Int32.Parse(codC.Text), Int32.Parse(codH.Text));
                 if (Int32.Parse(codC.Text) == c.NumeroCliente)
                 {
-                    dataGridView1.DataSource = ControlaEmpregados.RegistoEmpregado(Int32.Parse(codC.Text), Int32.Parse(codH.Text));
+                    dataGridView1.DataSource = ControlaClientes.RegistoCliente(Int32.Parse(codC.Text), Int32.Parse(codH.Text));
                 }
                 else
                 {
@@ -54,6 +60,10 @@ namespace TrabalhoLP2
             {
                 MessageBox.Show("Campos por preencher!!!");
             }
+        }
+        private void volta_Menu(object obj)
+        {
+            Application.Run(new Menu());
         }
     }
 }
